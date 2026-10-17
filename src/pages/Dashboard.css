@@ -1,0 +1,154 @@
+.dash-greeting { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin: 28px 0; }
+.level-card { display: flex; min-width: 170px; border: 1px solid var(--border); border-radius: 18px; padding: 14px 17px; flex-direction: column; color: var(--deep); background: white; box-shadow: 0 5px 20px rgba(53,32,95,.05); text-align: left; }
+.level-card span { color: var(--purple); font-size: 9px; font-weight: 800; letter-spacing: .13em; }.level-card strong { margin: 5px 0 1px; font-family: 'Noto Sans Kannada'; }.level-card small { color: var(--muted); }
+.mission { display: flex; overflow: hidden; min-height: 300px; background: var(--deep); border: 0; color: white; box-shadow: 0 16px 40px rgba(53,32,95,.18); }
+.daily-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }.phrase-day { display: flex; min-height: 145px; padding: 22px; align-items: center; justify-content: space-between; gap: 18px; }.phrase-day .kannada { margin: 7px 0 2px; font-size: 22px; font-weight: 700; }.phrase-day strong { display: block; color: var(--purple); font-size: 11px; }.phrase-day span { color: var(--muted); font-size: 11px; }.challenge-teaser { display: flex; border: 1px solid var(--border); padding: 22px; align-items: center; gap: 14px; color: var(--deep); background: #f3dcd6; text-align: left; }.challenge-teaser > span:nth-child(2) { flex: 1; }.challenge-teaser small, .challenge-teaser strong, .challenge-teaser em { display: block; }.challenge-teaser small { margin-bottom: 7px; color: #935445; font-size: 9px; font-weight: 800; letter-spacing: .08em; }.challenge-teaser strong { font-size: 14px; }.challenge-teaser em { margin-top: 4px; color: #876e68; font-size: 10px; font-style: normal; }
+.mission-copy { flex: 1; padding: 35px; }.mission-title { display: flex; gap: 14px; align-items: center; }.mission-title .icon-orb { color: #fff; background: rgba(255,255,255,.13); }.mission-title span { color: #cfc0ed; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }.mission-title h2 { margin: 5px 0 0; color: #fff; }
+.mission-list { display: flex; margin: 30px 0; gap: 20px; flex-wrap: wrap; }.mission-list div { display: flex; align-items: center; gap: 7px; color: #cabee1; font-size: 12px; }.mission-list div > span { display: grid; width: 20px; height: 20px; place-items: center; border: 1px solid #7d6a9f; border-radius: 50%; }.mission-list .done { color: white; }.mission-list .done > span { border-color: var(--green); background: var(--green); }
+.mission-progress { display: flex; width: 280px; padding: 35px; align-items: center; justify-content: center; flex-direction: column; background: rgba(255,255,255,.05); }.progress-circle { display: grid; width: 145px; height: 145px; padding: 10px; place-items: center; border-radius: 50%; background: conic-gradient(var(--yellow) var(--progress), rgba(255,255,255,.12) 0); }.progress-circle > div { display: grid; width: 100%; height: 100%; place-items: center; align-content: center; border-radius: 50%; background: var(--deep); }.progress-circle strong { font-size: 28px; }.progress-circle small { color: #cfc0ed; }.mission-progress > span { margin-top: 18px; color: #cfc0ed; font-size: 11px; }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }.stat-card { display: flex; padding: 20px; align-items: center; gap: 14px; }.stat-card .coral { color: var(--coral); background: #fff0ec; }.stat-card .yellow { color: #c9961c; background: #fff8df; }.stat-card .green { color: var(--green); background: #e8f6ef; }.stat-card strong, .stat-card span, .stat-card small { display: block; }.stat-card strong { float: left; margin-right: 5px; color: var(--deep); font-size: 22px; }.stat-card span { padding-top: 6px; color: var(--deep); font-size: 12px; font-weight: 700; }.stat-card small { clear: both; margin-top: 5px; color: var(--muted); font-size: 10px; }
+.lesson-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }.quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }.quick-card { display: flex; border: 0; border-radius: 20px; padding: 22px; align-items: center; gap: 15px; text-align: left; }.quick-card > svg:first-child { width: 27px; height: 27px; }.quick-card span { flex: 1; }.quick-card strong, .quick-card small { display: block; }.quick-card small { margin-top: 5px; opacity: .75; }.quick-card.survival { color: #fff; background: var(--purple); }.quick-card.favourites { color: var(--deep); background: #f3dcd6; }
+.quick-card.help-say { color: white; background: var(--deep); }.quick-card.revision { color: var(--deep); background: #eee7fb; }
+@media (max-width: 720px) { .dash-greeting { align-items: flex-start; }.level-card { display: none; }.daily-feature-grid { grid-template-columns: 1fr; }.mission { flex-direction: column; }.mission-copy { padding: 25px; }.mission-progress { width: 100%; padding: 22px; }.progress-circle { width: 110px; height: 110px; }.stat-grid { grid-template-columns: 1fr; }.lesson-grid, .quick-grid { grid-template-columns: 1fr; } }
+
+.mission-celebration-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow: hidden;
+  background: rgba(25, 20, 45, 0.62);
+  backdrop-filter: blur(6px);
+  animation: mission-fade-in 0.25s ease-out;
+}
+
+.mission-celebration-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 400px);
+  padding: 32px 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(30, 20, 60, 0.2);
+  animation: mission-pop-in 0.4s ease-out;
+}
+
+.mission-celebration-icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 16px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lavender);
+  font-size: 38px;
+}
+
+.mission-celebration-card h2 {
+  margin: 8px 0;
+  color: var(--purple);
+  font-size: 30px;
+}
+
+.mission-celebration-card h3 {
+  margin: 0 0 10px;
+  color: var(--deep);
+  font-size: 21px;
+}
+
+.mission-celebration-card > p:not(.eyebrow) {
+  margin: 0 auto 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mission-celebration-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f8f5ff;
+}
+
+.mission-celebration-progress strong {
+  color: var(--purple);
+  font-size: 28px;
+}
+
+.mission-celebration-progress span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mission-celebration-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.mission-celebration-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mission-celebration-confetti span {
+  position: absolute;
+  top: -15px;
+  left: calc(var(--confetti-index) * 4.1% + 2%);
+  width: 8px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--purple);
+  opacity: 0;
+  animation: mission-confetti-fall 2.8s ease-in infinite;
+  animation-delay: calc(var(--confetti-index) * -0.11s);
+}
+
+.mission-celebration-confetti span:nth-child(3n) {
+  background: #f3b84b;
+}
+
+.mission-celebration-confetti span:nth-child(3n + 1) {
+  background: #52b788;
+}
+
+.mission-celebration-confetti span:nth-child(3n + 2) {
+  background: #f28b82;
+}
+
+@keyframes mission-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mission-pop-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes mission-confetti-fall {
+  0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(600deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-celebration-overlay,
+  .mission-celebration-card,
+  .mission-celebration-confetti span {
+    animation: none;
+  }
+
+  .mission-celebration-confetti {
+    display: none;
+  }
+}

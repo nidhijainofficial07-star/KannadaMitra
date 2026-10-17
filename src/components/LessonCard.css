@@ -1,0 +1,21 @@
+.lesson-card { position: relative; display: flex; align-items: flex-start; gap: 16px; overflow: hidden; min-height: 175px; padding: 22px; }
+.lesson-card::before { position: absolute; inset: 0 auto 0 0; width: 5px; content: ''; background: var(--purple); }
+.lesson-card.accent-coral::before { background: var(--coral); }
+.lesson-card.accent-green::before { background: var(--green); }
+.lesson-card.accent-yellow::before { background: var(--yellow); }
+.lesson-icon { display: grid; flex: 0 0 46px; width: 46px; height: 46px; place-items: center; border-radius: 14px; color: var(--purple); background: var(--lavender); }
+.lesson-copy { min-width: 0; }
+.lesson-copy h3 { margin: 14px 0 3px; font-size: 18px; }
+.lesson-copy p { margin: 0 0 7px; color: var(--purple); font-size: 16px; font-weight: 600; }
+.lesson-copy small { color: var(--muted); line-height: 1.5; }
+.lesson-open { position: absolute; right: 18px; top: 18px; display: grid; width: 37px; height: 37px; place-items: center; border: 0; border-radius: 11px; color: var(--deep); background: #f7f4fb; }
+.lesson-kannada-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lesson-kannada-row .kannada {
+  margin: 0;
+}

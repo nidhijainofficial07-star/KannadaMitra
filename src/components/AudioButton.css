@@ -1,0 +1,26 @@
+.audio-control { position: relative; display: inline-flex; flex: 0 0 auto; }
+.audio-button.playing { border-color: var(--purple); color: white; background: var(--purple); box-shadow: 0 0 0 4px rgba(108, 74, 182, .14); }
+.audio-button.playing svg { animation: audio-pulse .8s ease-in-out infinite alternate; }
+
+.audio-message {
+  position: fixed;
+  z-index: 120;
+  left: 50%;
+  bottom: 24px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 12px 16px;
+  color: var(--deep);
+  background: white;
+  box-shadow: var(--shadow);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  transform: translateX(-50%);
+  animation: audio-message-in .2s ease-out both;
+}

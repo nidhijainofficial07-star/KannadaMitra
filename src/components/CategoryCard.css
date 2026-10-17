@@ -1,0 +1,6 @@
+.category-card { position: relative; overflow: hidden; border: 1px solid var(--border); padding: 22px; color: var(--deep); background: white; text-align: left; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.category-card:hover { transform: translateY(-3px); border-color: #d7caed; box-shadow: 0 14px 34px rgba(53,32,95,.11); }
+.category-card::after { position: absolute; right: -28px; bottom: -35px; width: 100px; height: 100px; border-radius: 50%; content: ''; background: var(--lavender); opacity: .5; }
+.category-card-top { display: flex; align-items: center; justify-content: space-between; }.category-count { color: var(--muted); font-size: 10px; font-weight: 700; }
+.category-card h3 { margin: 22px 0 4px; font-size: 17px; }.category-card > p { margin: 0 0 10px; color: var(--purple); font-size: 13px; font-weight: 600; }.category-card > small { display: block; min-height: 34px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.category-progress { position: relative; z-index: 1; margin-top: 20px; }.category-progress > div:first-child { display: flex; margin-bottom: 7px; justify-content: space-between; color: var(--muted); font-size: 9px; }.category-progress strong { color: var(--purple); }

@@ -1,0 +1,22 @@
+.topbar { max-width: 1180px; height: 82px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; border: 0; padding: 0; color: var(--deep); background: transparent; text-align: left; }
+.brand-mark { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 13px; color: #fff; background: var(--purple); font-size: 22px; font-weight: 700; box-shadow: 0 7px 15px rgba(108,74,182,.25); }
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 17px; }
+.brand small { margin-top: 3px; color: var(--muted); font-size: 10px; font-weight: 600; }
+.header-stats { display: flex; gap: 9px; }
+.header-stats span { display: flex; align-items: center; gap: 6px; border-radius: 999px; padding: 8px 12px; color: var(--deep); background: #fff; font-size: 13px; font-weight: 700; box-shadow: 0 3px 14px rgba(53,32,95,.07); }
+.header-stats span:first-child svg { color: var(--coral); }
+.header-stats span:last-child svg { color: #dca624; }
+.profile-button { display: grid; width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 50%; place-items: center; color: var(--purple); background: white; box-shadow: 0 3px 14px rgba(53,32,95,.07); }
+.nav-bar { position: sticky; top: 0; z-index: 10; display: flex; width: max-content; max-width: calc(100% - 32px); margin: 0 auto; padding: 6px; gap: 3px; border: 1px solid rgba(230,222,244,.9); border-radius: 17px; background: rgba(255,255,255,.9); box-shadow: 0 8px 25px rgba(53,32,95,.09); backdrop-filter: blur(14px); }
+.nav-bar button { display: flex; align-items: center; gap: 7px; border: 0; border-radius: 11px; padding: 9px 13px; color: var(--muted); background: transparent; font-size: 13px; font-weight: 700; }
+.nav-bar button.active { color: white; background: var(--purple); }
+@media (max-width: 650px) {
+  .topbar { height: 72px; padding: 0 16px; }
+  .brand small { display: none; }
+  .header-stats span { padding: 7px 9px; font-size: 12px; }
+  .nav-bar { position: fixed; top: auto; bottom: 12px; left: 50%; z-index: 30; width: calc(100% - 24px); max-width: 470px; transform: translateX(-50%); justify-content: space-around; }
+  .nav-bar button { flex: 1; flex-direction: column; gap: 2px; padding: 7px 4px; font-size: 10px; }
+  .nav-bar button svg { width: 19px; height: 19px; }
+}
