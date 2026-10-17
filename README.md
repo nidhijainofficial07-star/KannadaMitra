@@ -107,7 +107,7 @@ npm run preview
 
 - **Project Name:** KannadaMitra
 - **Hackathon:** Kannada Digital Innovation Hackathon 2026
-- **Problem Statement:** Kannada for Everyone
+- **Problem Statement:** Kannada in Everyday life
 - **Deployment:** Vercel
 
 ---
