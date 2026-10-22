@@ -146,6 +146,7 @@ export default function LessonQuiz({
         <AudioButton text={question.phrase.kn} />
       </div>
 
+
       <div className="lesson-quiz-options">
         {question.options.map((option, optionIndex) => {
           const state =
@@ -158,24 +159,38 @@ export default function LessonQuiz({
               : ''
 
           return (
-            <button
-              className={state}
-              onClick={() => choose(optionIndex)}
+            <div
+              className="lesson-quiz-option-row"
               key={`${question.phrase.id}-${option}`}
             >
-              <span>
-                {String.fromCharCode(65 + optionIndex)}
-              </span>
+              <button
+                type="button"
+                className={state}
+                onClick={() => choose(optionIndex)}
+              >
+                <span>
+                  {String.fromCharCode(65 + optionIndex)}
+                </span>
 
-              {option}
+                <span className="lesson-quiz-option-text">
+                  {option}
+                </span>
 
-              {state === 'correct' && (
-                <Icon name="check" size={17} />
-              )}
-            </button>
+                {state === 'correct' && (
+                  <Icon name="check" size={17} />
+                )}
+              </button>
+
+              <AudioButton
+                text={option}
+                language="en"
+                label={`Hear option ${String.fromCharCode(65 + optionIndex)}`}
+              />
+            </div>
           )
         })}
       </div>
+
 
       {selected !== null && (
         <div

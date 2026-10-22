@@ -1,3 +1,96 @@
-.survival-page { max-width: 900px; }.phrase-search { display: flex; border: 1px solid var(--border); border-radius: 16px; padding: 0 16px; align-items: center; gap: 10px; background: white; box-shadow: 0 5px 20px rgba(53,32,95,.05); }.phrase-search > svg { color: var(--purple); }.phrase-search input { flex: 1; min-width: 0; border: 0; padding: 15px 0; color: var(--deep); background: transparent; outline: 0; }.phrase-search input::placeholder { color: #9c93a9; }.phrase-search button { border: 0; padding: 4px; color: var(--muted); background: transparent; }.category-tabs { display: flex; overflow-x: auto; gap: 8px; margin: 17px 0 23px; padding-bottom: 3px; }.category-tabs button { border: 1px solid var(--border); border-radius: 99px; padding: 8px 13px; color: var(--muted); background: white; font-size: 11px; font-weight: 700; white-space: nowrap; }.category-tabs button.active { border-color: var(--purple); color: white; background: var(--purple); }
-.survival-list { display: grid; gap: 11px; }.survival-card { position: relative; display: flex; min-height: 125px; padding: 22px; align-items: center; gap: 20px; }.category-label { position: absolute; top: 13px; right: 18px; color: #9a8cae; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.survival-card > div:first-of-type { flex: 1; }.survival-card p { margin: 0 0 3px; color: var(--deep); font-size: 23px; font-weight: 700; }.survival-card strong { display: block; margin-bottom: 5px; color: var(--purple); font-size: 12px; }.survival-card > div > span { color: var(--muted); font-size: 12px; }.phrase-actions { display: flex; gap: 8px; }.survival-page .empty-state .btn { margin-top: 20px; }
+.survival-page { max-width: 900px; }.phrase-search { display: flex; border: 1px solid var(--border); border-radius: 16px; padding: 0 16px; align-items: center; gap: 10px; background: white; box-shadow: 0 5px 20px rgba(53,32,95,.05); }.phrase-search > svg {
+  color: var(--green);
+}
+.phrase-search input { flex: 1; min-width: 0; border: 0; padding: 15px 0; color: var(--deep); background: transparent; outline: 0; }.phrase-search input::placeholder {
+  color: var(--muted);
+}
+.phrase-search button { border: 0; padding: 4px; color: var(--muted); background: transparent; }.category-tabs { display: flex; overflow-x: auto; gap: 8px; margin: 17px 0 23px; padding-bottom: 3px; }.category-tabs button { border: 1px solid var(--border); border-radius: 99px; padding: 8px 13px; color: var(--muted); background: white; font-size: 11px; font-weight: 700; white-space: nowrap; }.category-tabs button.active {
+  border-color: var(--green);
+  color: white;
+  background: var(--green);
+}
+.survival-list { display: grid; gap: 11px; }.survival-card { position: relative; display: flex; min-height: 125px; padding: 22px; align-items: center; gap: 20px; }
+.category-label {
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}.survival-card > div:first-of-type { flex: 1; }.survival-card p { margin: 0 0 3px; color: var(--deep); font-size: 23px; font-weight: 700; }.survival-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--green);
+  font-size: 12px;
+}.survival-card > div > span { color: var(--muted); font-size: 12px; }.phrase-actions { display: flex; gap: 8px; }.survival-page .empty-state .btn { margin-top: 20px; }
 @media (max-width: 570px) { .survival-card { padding: 20px 15px; align-items: flex-start; flex-wrap: wrap; }.survival-card > div:first-of-type { width: calc(100% - 20px); flex-basis: 100%; }.category-label { top: 10px; }.phrase-actions { width: 100%; justify-content: flex-end; } }
+/* Survival phrases — visual refinement */
+.phrase-search {
+  box-shadow: 0 5px 20px rgba(39, 37, 31, 0.04);
+}
+
+.phrase-search input:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.phrase-search button,
+.category-tabs button,
+.phrase-actions button {
+  cursor: pointer;
+}
+
+.category-tabs button {
+  transition: border-color 160ms ease, color 160ms ease,
+    background 160ms ease;
+}
+
+.category-tabs button:not(.active):hover {
+  border-color: #d5dfd3;
+  color: var(--green);
+  background: var(--lavender);
+}
+
+.survival-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.survival-card:hover {
+  border-color: #d5dfd3;
+  box-shadow: 0 8px 20px rgba(39, 37, 31, 0.05);
+}
+
+.survival-card p {
+  line-height: 1.45;
+}
+
+.phrase-actions button:focus-visible,
+.category-tabs button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+@media (max-width: 570px) {
+  .survival-card p {
+    font-size: 21px;
+  }
+
+  .category-label {
+    right: 14px;
+    max-width: 45%;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-tabs button,
+  .survival-card {
+    transition: none;
+  }
+}

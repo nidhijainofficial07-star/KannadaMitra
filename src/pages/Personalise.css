@@ -1,4 +1,14 @@
-.personalise-page { min-height: 100vh; padding: 0 20px 60px; background: radial-gradient(circle at 15% 20%, #eee6fc 0, transparent 24%), var(--cream); }
+.personalise-page {
+  min-height: 100vh;
+  padding: 0 20px 60px;
+  background: radial-gradient(
+    circle at 15% 20%,
+    #e7eee5 0,
+    transparent 24%
+  ), var(--cream);
+}
+
+
 .personalise-page.editing { min-height: auto; padding-bottom: 100px; }
 .personalise-top { display: flex; max-width: 900px; margin: 0 auto; padding: 24px 0; align-items: center; justify-content: space-between; }
 .skip-button { border: 0; padding: 8px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 700; }
@@ -6,19 +16,26 @@
 .personalise-intro { text-align: center; }
 .personalise-intro h1 { margin: 15px 0 10px; font-size: 36px; }
 .personalise-intro p { color: var(--muted); line-height: 1.6; }
-.step-pill { border-radius: 99px; padding: 6px 10px; color: var(--purple); background: var(--lavender); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.step-pill {
+  border-radius: 99px;
+  padding: 6px 10px;
+  color: var(--green);
+  background: var(--lavender);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 .form-section { margin: 28px 0 0; border: 0; padding: 0; }
 .form-section > label, .form-section > legend { margin-bottom: 10px; color: var(--deep); font-size: 13px; font-weight: 800; }
-.form-section > input { width: 100%; border: 1px solid var(--border); border-radius: 13px; padding: 13px 15px; color: var(--deep); background: #fcfbfe; outline: none; }
-.form-section > input:focus { border-color: var(--purple); }
+
 .level-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
 .level-options button { position: relative; min-height: 88px; border: 1px solid var(--border); border-radius: 14px; padding: 13px; color: var(--deep); background: white; text-align: left; }
 .level-options button > span, .level-options button > small { display: block; }.level-options button > span { margin-bottom: 6px; font-weight: 700; }.level-options button > small { color: var(--muted); font-size: 10px; line-height: 1.4; }
-.form-section button i { position: absolute; top: 8px; right: 8px; display: none; width: 20px; height: 20px; border-radius: 50%; place-items: center; color: white; background: var(--purple); }
-.form-section button.selected { border-color: var(--purple); background: #faf8ff; box-shadow: 0 0 0 2px rgba(108,74,182,.08); }.form-section button.selected i { display: grid; }
+
 .goal-options { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
 .goal-options button { position: relative; display: flex; min-height: 76px; border: 1px solid var(--border); border-radius: 14px; padding: 13px; align-items: center; gap: 11px; color: var(--deep); background: white; text-align: left; }
-.goal-options button > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 11px; color: var(--purple); background: var(--lavender); }.goal-options strong, .goal-options small { display: block; }.goal-options strong { font-size: 12px; }.goal-options small { margin-top: 3px; color: var(--muted); font-size: 9px; }
+.goal-options strong, .goal-options small { display: block; }.goal-options strong { font-size: 12px; }.goal-options small { margin-top: 3px; color: var(--muted); font-size: 9px; }
 .duration-section > p { margin: -4px 0 12px; color: var(--muted); font-size: 11px; }.duration-section > div { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }.duration-section button { position: relative; border: 1px solid var(--border); border-radius: 12px; padding: 11px; color: var(--deep); background: white; font-weight: 800; }.duration-section button small { margin-left: 3px; color: var(--muted); font-weight: 500; }
 .personalise-actions { display: flex; margin-top: 32px; justify-content: flex-end; gap: 10px; }
 .reset-section { display: flex; margin-top: 32px; border-top: 1px solid var(--border); padding-top: 24px; align-items: center; justify-content: space-between; gap: 24px; }
@@ -26,7 +43,16 @@
 .reset-section p { max-width: 480px; margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
 .btn-danger-ghost { flex: 0 0 auto; border: 1px solid #efc0b7; color: #a74635; background: #fff8f6; box-shadow: none; }
 .btn-danger-ghost:hover { background: #fff0ec; }
-.dialog-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; padding: 20px; place-items: center; background: rgba(35, 20, 61, .56); backdrop-filter: blur(4px); }
+.dialog-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: rgba(39, 37, 31, 0.56);
+  backdrop-filter: blur(4px);
+}
 .reset-dialog { width: min(100%, 480px); padding: 34px; text-align: center; box-shadow: 0 24px 70px rgba(35, 20, 61, .28); animation: celebrate-in .22s ease-out both; }
 .reset-dialog-icon { display: grid; width: 54px; height: 54px; margin: 0 auto 18px; place-items: center; border-radius: 16px; color: #a74635; background: #fff0ec; }
 .reset-dialog h2 { margin-bottom: 10px; }
@@ -35,3 +61,56 @@
 .btn-danger { color: white; background: #b44e3b; box-shadow: 0 8px 18px rgba(180, 78, 59, .22); }
 .btn-danger:hover { background: #9d402f; }
 @media (max-width: 650px) { .personalise-card { margin-top: 5px; padding: 28px 17px; }.personalise-intro h1 { font-size: 30px; }.level-options, .goal-options { grid-template-columns: 1fr; }.personalise-actions { flex-direction: column-reverse; }.personalise-actions .btn { width: 100%; }.reset-section { align-items: stretch; flex-direction: column; }.reset-section .btn { width: 100%; }.reset-dialog { padding: 28px 20px; }.reset-dialog > div:last-child { align-items: stretch; flex-direction: column-reverse; } }
+.form-section > input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 13px 15px;
+  color: var(--deep);
+  background: var(--white);
+  outline: none;
+}
+
+.form-section > input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(53, 107, 82, 0.12);
+}
+
+.form-section button i {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  place-items: center;
+  color: white;
+  background: var(--green);
+}
+
+.form-section button.selected {
+  border-color: var(--green);
+  background: var(--lavender);
+  box-shadow: 0 0 0 2px rgba(53, 107, 82, 0.08);
+}
+
+.form-section button.selected i {
+  display: grid;
+}
+
+.goal-options button > span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--green);
+  background: var(--lavender);
+}
+
+.confidence-check button.selected {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--lavender);
+}

@@ -1,4 +1,4 @@
-.lesson-quiz { padding: 26px; }.lesson-quiz-head { display: flex; align-items: flex-start; justify-content: space-between; }.lesson-quiz-head h3 { margin: 0; }.lesson-quiz-head > span { color: var(--purple); font-size: 11px; font-weight: 800; }.lesson-quiz-kannada { margin: 28px 0 20px; color: var(--deep); font-size: 26px; font-weight: 700; }.lesson-quiz-options { display: grid; gap: 8px; }.lesson-quiz-options button { display: flex; border: 1px solid var(--border); border-radius: 12px; padding: 12px; align-items: center; gap: 10px; color: var(--deep); background: white; text-align: left; }.lesson-quiz-options button > span { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; color: var(--purple); background: var(--lavender); font-size: 10px; }.lesson-quiz-options button svg { margin-left: auto; }.lesson-quiz-options .correct { border-color: var(--green); color: var(--green); background: #effaf4; }.lesson-quiz-options .wrong { border-color: var(--coral); background: #fff1ee; }.lesson-quiz-options .dim { opacity: .55; }.lesson-quiz-feedback { margin-top: 12px; border-radius: 11px; padding: 11px; color: #9b4d3f; background: #fff1ee; font-size: 11px; }.lesson-quiz-feedback.correct { color: var(--green); background: #e8f6ef; }.lesson-quiz-footer { display: flex; margin-top: 18px; align-items: center; justify-content: space-between; }.lesson-quiz-footer > span { color: var(--muted); font-size: 9px; }.lesson-quiz-footer button:disabled { cursor: not-allowed; opacity: .45; }
+.lesson-quiz { padding: 26px; }.lesson-quiz-head { display: flex; align-items: flex-start; justify-content: space-between; }.lesson-quiz-head h3 { margin: 0; }.lesson-quiz-head > span { color: var(--purple); font-size: 11px; font-weight: 800; }.lesson-quiz-kannada { margin: 28px 0 20px; color: var(--deep); font-size: 26px; font-weight: 700; }.lesson-quiz-options { display: grid; gap: 8px; }.lesson-quiz-options .lesson-quiz-option-row > button { display: flex; border: 1px solid var(--border); border-radius: 12px; padding: 12px; align-items: center; gap: 10px; color: var(--deep); background: white; text-align: left; }.lesson-quiz-options button > span { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; color: var(--purple); background: var(--lavender); font-size: 10px; }.lesson-quiz-options button svg { margin-left: auto; }.lesson-quiz-options .correct { border-color: var(--green); color: var(--green); background: #effaf4; }.lesson-quiz-options .wrong { border-color: var(--coral); background: #fff1ee; }.lesson-quiz-options .dim { opacity: .55; }.lesson-quiz-feedback { margin-top: 12px; border-radius: 11px; padding: 11px; color: #9b4d3f; background: #fff1ee; font-size: 11px; }.lesson-quiz-feedback.correct { color: var(--green); background: #e8f6ef; }.lesson-quiz-footer { display: flex; margin-top: 18px; align-items: center; justify-content: space-between; }.lesson-quiz-footer > span { color: var(--muted); font-size: 9px; }.lesson-quiz-footer button:disabled { cursor: not-allowed; opacity: .45; }
 .lesson-quiz-result { display: flex; padding: 24px; align-items: center; gap: 15px; }.lesson-quiz-result > div:nth-child(2) { flex: 1; }.lesson-quiz-result h3 { margin: 0 0 4px; }.lesson-quiz-result span { color: var(--muted); font-size: 11px; }
 @media (max-width: 600px) { .lesson-quiz-result { align-items: stretch; flex-direction: column; }.lesson-quiz-footer { align-items: stretch; flex-direction: column; gap: 12px; } }
 .lesson-quiz-question {
@@ -11,4 +11,36 @@
 
 .lesson-quiz-question .lesson-quiz-kannada {
   margin: 0;
+}
+
+
+.lesson-quiz-option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lesson-quiz-option-row > button {
+  flex: 1;
+  min-width: 0;
+}
+
+.lesson-quiz-option-row > button .lesson-quiz-option-text {
+  display: block;
+  width: auto;
+  height: auto;
+  flex: 1;
+  color: inherit;
+  background: transparent;
+  border-radius: 0;
+  font-size: inherit;
+  text-align: left;
+}
+
+.lesson-quiz-option-row > button > span:first-child {
+  flex-shrink: 0;
+}
+
+.lesson-quiz-option-row > .audio-button {
+  flex-shrink: 0;
 }

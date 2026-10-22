@@ -1,2 +1,115 @@
-.help-say-page { max-width: 1000px; }.intent-picker { padding: 22px; }.intent-copy { display: flex; align-items: center; gap: 12px; }.intent-copy strong, .intent-copy small { display: block; }.intent-copy small { margin-top: 4px; color: var(--muted); font-size: 10px; }.intent-tabs { display: flex; overflow-x: auto; margin-top: 18px; gap: 7px; padding-bottom: 2px; }.intent-tabs button { border: 1px solid var(--border); border-radius: 99px; padding: 9px 13px; color: var(--muted); background: white; font-size: 11px; font-weight: 700; white-space: nowrap; }.intent-tabs button.active { border-color: var(--purple); color: white; background: var(--purple); box-shadow: 0 6px 14px rgba(108,74,182,.2); }.help-search { margin-top: 15px; }.help-results-head { display: flex; margin: 25px 2px 12px; justify-content: space-between; color: var(--muted); font-size: 11px; }.help-results-head small { color: var(--purple); font-weight: 700; }.help-phrase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }.help-phrase-card { position: relative; padding: 24px; }.help-card-actions { position: absolute; top: 18px; right: 18px; display: flex; gap: 7px; }.phrase-context { color: var(--purple); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.help-phrase-card > p { max-width: calc(100% - 95px); margin: 24px 0 5px; font-size: 22px; font-weight: 700; line-height: 1.45; }.help-phrase-card > strong { display: block; color: var(--purple); font-size: 11px; }.help-phrase-card > span:last-child { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }.help-say-page .empty-state { margin-top: 14px; }.help-say-page .empty-state .btn { margin-top: 18px; }
+.help-say-page { max-width: 1000px; }
+.intent-picker { padding: 22px; }
+.intent-copy { display: flex; align-items: center; gap: 12px; }
+.intent-copy strong, .intent-copy small { display: block; }
+.intent-copy small { margin-top: 4px; color: var(--muted); font-size: 10px; }
+.intent-tabs { display: flex; overflow-x: auto; margin-top: 18px; gap: 7px; padding-bottom: 2px; }
+.intent-tabs button { border: 1px solid var(--border); border-radius: 99px; padding: 9px 13px; color: var(--muted); background: white; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.help-search { margin-top: 15px; }.help-results-head { display: flex; margin: 25px 2px 12px; justify-content: space-between; color: var(--muted); font-size: 11px; }
+.help-phrase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.help-phrase-card { position: relative; padding: 24px; }
+.help-card-actions { position: absolute; top: 18px; right: 18px; display: flex; gap: 7px; }
+.help-phrase-card > p { max-width: calc(100% - 95px); margin: 24px 0 5px; font-size: 22px; font-weight: 700; line-height: 1.45; }
+.help-phrase-card > strong { display: block; color: var(--purple); font-size: 11px; }.help-phrase-card > span:last-child { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }.help-say-page .empty-state { margin-top: 14px; }.help-say-page .empty-state .btn { margin-top: 18px; }
 @media (max-width: 650px) { .help-phrase-grid { grid-template-columns: 1fr; }.help-phrase-card { padding: 20px; } }
+.intent-tabs button.active {
+  border-color: var(--green);
+  color: white;
+  background: var(--green);
+  box-shadow: 0 6px 14px rgba(53, 107, 82, 0.16);
+}
+
+.help-results-head small {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.phrase-context {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Help Me Say — visual refinement */
+.intent-picker,
+.help-phrase-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: none;
+}
+
+.intent-picker {
+  padding: 22px;
+}
+
+.intent-tabs button {
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease,
+    color 160ms ease;
+}
+
+.intent-tabs button:not(.active):hover {
+  border-color: #d5dfd3;
+  color: var(--green);
+  background: var(--lavender);
+}
+
+.help-phrase-card {
+  transition: transform 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.help-phrase-card:hover {
+  transform: translateY(-2px);
+  border-color: #d5dfd3;
+  box-shadow: 0 10px 24px rgba(39, 37, 31, 0.06);
+}
+
+.help-phrase-card > p {
+  color: var(--deep);
+}
+
+.help-phrase-card > strong {
+  color: var(--green);
+}
+
+.help-card-actions button {
+  cursor: pointer;
+}
+
+.intent-tabs button:focus-visible,
+.help-card-actions button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+  .intent-picker {
+    padding: 17px;
+  }
+
+  .help-phrase-card > p {
+    max-width: calc(100% - 65px);
+    font-size: 20px;
+  }
+
+  .help-card-actions {
+    top: 14px;
+    right: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intent-tabs button,
+  .help-phrase-card {
+    transition: none;
+  }
+
+  .help-phrase-card:hover {
+    transform: none;
+  }
+}

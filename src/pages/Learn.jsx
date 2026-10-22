@@ -4,7 +4,6 @@ import LessonCard from '../components/LessonCard'
 import LessonQuiz from '../components/LessonQuiz'
 import AudioButton from '../components/AudioButton'
 import Icon from '../components/Icon'
-import MixedSurvivalQuiz from '../components/MixedSurvivalQuiz'
 import { lessonCategories, lessons } from '../data/lessons'
 import './Learn.css'
 
@@ -34,9 +33,6 @@ export default function Learn({ selectedLesson, setSelectedLesson, completedLess
         <div className="library-filters"><label>Category<select value={category} onChange={(event) => setCategory(event.target.value)}><option value="all">All categories</option>{lessonCategories.map((item) => <option value={item.id} key={item.id}>{item.title}</option>)}</select></label><label>Difficulty<select value={level} onChange={(event) => setLevel(event.target.value)}>{levels.map((item) => <option key={item}>{item}</option>)}</select></label></div>
       </section>
 
-{!query && category === 'all' && level === 'All levels' && (
-  <MixedSurvivalQuiz lessons={lessons} />
-)}
 
 {!query && category === 'all' && level === 'All levels' && <><div className="section-title"><div><p className="eyebrow">Browse by category</p><h2>Eight paths for everyday life</h2></div></div><div className="category-grid">{lessonCategories.map((item) => <CategoryCard category={item} lessons={lessons.filter((lessonItem) => lessonItem.category === item.id)} completedLessons={completedLessons} onOpen={() => setCategory(item.id)} key={item.id} />)}</div></>}
       <div className="section-title"><div><p className="eyebrow">{category === 'all' ? 'All lessons' : lessonCategories.find((item) => item.id === category)?.title}</p><h2>{filteredLessons.length} lesson{filteredLessons.length === 1 ? '' : 's'} found</h2></div>{category !== 'all' && <button className="btn btn-ghost" onClick={() => setCategory('all')}>Clear category</button>}</div>

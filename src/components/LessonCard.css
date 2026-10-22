@@ -19,3 +19,145 @@
 .lesson-kannada-row .kannada {
   margin: 0;
 }
+
+
+/* Lesson cards — visual refinement */
+
+.lesson-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.lesson-card:hover {
+  transform: translateY(-3px);
+  border-color: #d5dfd3;
+  box-shadow: 0 10px 24px rgba(39, 37, 31, 0.06);
+}
+
+.lesson-card:focus-within {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.lesson-card::before {
+  width: 4px;
+}
+
+.lesson-icon {
+  flex-basis: 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--green);
+  background: var(--lavender);
+}
+
+.lesson-copy {
+  padding-right: 24px;
+}
+
+.lesson-copy h3 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: var(--deep);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.lesson-copy p {
+  color: var(--green);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.lesson-copy small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.lesson-open {
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.lesson-open:hover {
+  color: white;
+  background: var(--green);
+}
+
+.lesson-open:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.lesson-kannada-row {
+  min-width: 0;
+  row-gap: 6px;
+}
+
+@media (max-width: 600px) {
+  .lesson-card {
+    min-height: 0;
+    gap: 13px;
+    padding: 19px 16px;
+  }
+
+  .lesson-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .lesson-copy {
+    padding-right: 16px;
+  }
+
+  .lesson-copy h3 {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .lesson-copy p {
+    font-size: 15px;
+  }
+
+  .lesson-copy small {
+    font-size: 12px;
+  }
+
+  .lesson-open {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-card,
+  .lesson-open {
+    transition: none;
+  }
+
+  .lesson-card:hover {
+    transform: none;
+  }
+}

@@ -202,3 +202,47 @@ export function stopKannadaSpeech() {
     api.synthesis.cancel()
   }
 }
+
+
+export function speakEnglish(text, callbacks = {}) {
+  const api = getSpeechApi()
+
+  if (!api || !text?.trim()) {
+    return { ok: false, reason: 'unsupported' }
+  }
+
+  try {
+    api.synthesis.cancel()
+
+    const utterance = new SpeechSynthesisUtterance(text.trim())
+    const voices = api.synthesis.getVoices()
+
+    const englishVoice =
+      voices.find(voice => voice.lang.toLowerCase() === 'en-in') ||
+      voices.find(voice => voice.lang.toLowerCase().startsWith('en-')) ||
+      voices.find(voice => voice.lang.toLowerCase() === 'en')
+
+    utterance.lang = englishVoice?.lang || 'en-US'
+
+    if (englishVoice) {
+      utterance.voice = englishVoice
+    }
+
+    utterance.rate = 0.9
+
+    utterance.onstart = () => callbacks.onStart?.()
+    utterance.onend = () => callbacks.onEnd?.()
+    utterance.onerror = event => {
+      if (event.error !== 'canceled' && event.error !== 'interrupted') {
+        callbacks.onError?.(event)
+      }
+    }
+
+    api.synthesis.speak(utterance)
+
+    return { ok: true, voice: englishVoice?.name || 'Default English voice' }
+  } catch (error) {
+    console.error('Could not start English speech:', error)
+    return { ok: false, reason: 'playback-error' }
+  }
+}

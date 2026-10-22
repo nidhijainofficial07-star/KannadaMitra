@@ -143,7 +143,7 @@ export default function App() {
     const initialCategory = selectedLesson?.split('-')[0] || goalScenario[progress.profile.goal] || 'food'
     content = <Conversation onComplete={completeConversation} navigate={navigate} completedScenarios={progress.completedConversations} initialCategory={initialCategory} />
   }
-  else if (page === 'quiz') content = <Quiz onFinish={finishQuiz} navigate={navigate} previousBest={progress.quizScores.everyday?.score || 0} />
+  else if (page === 'quiz') content = <Quiz onFinish={finishQuiz} navigate={navigate} previousBest={progress.quizScores.everyday?.score || 0} completedLessons={progress.completedLessons} />
   else if (page === 'progress') content = <Progress {...pageProps} />
   else if (page === 'survival') content = <SurvivalKannada favourites={progress.favourites} toggleFavourite={toggleFavourite} />
   else if (page === 'favourites') content = <Favourites favourites={progress.favourites} toggleFavourite={toggleFavourite} navigate={navigate} />

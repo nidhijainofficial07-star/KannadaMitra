@@ -5,3 +5,283 @@
 .next-step { display: flex; margin-top: 30px; border-radius: 22px; padding: 24px 28px; align-items: center; justify-content: space-between; gap: 20px; color: white; background: var(--deep); }.next-step .eyebrow { color: #c5b4e4; }.next-step h2 { margin: 0; color: white; }
 @media (max-width: 900px) { .progress-stats { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 750px) { .progress-hero { align-items: stretch; flex-direction: column; }.level-progress { width: 100%; }.progress-stats { grid-template-columns: repeat(2, 1fr); }.progress-columns { grid-template-columns: 1fr; }.next-step { align-items: stretch; flex-direction: column; } }
+
+/* Progress page refinement */
+
+.progress-hero {
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.progress-avatar {
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: white;
+  background: var(--green);
+}
+
+.progress-hero p {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.progress-hero h2 {
+  color: var(--deep);
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.45;
+}
+
+.progress-hero > div:first-child span {
+  color: var(--green);
+}
+
+.level-progress {
+  max-width: 370px;
+}
+
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--lavender);
+}
+
+.progress-fill {
+  min-height: 8px;
+  border-radius: inherit;
+  background: var(--green);
+  transition: width 250ms ease;
+}
+
+.progress-stats {
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.progress-stats > div {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.progress-stats svg {
+  color: var(--green);
+}
+
+.progress-stats strong {
+  overflow-wrap: anywhere;
+  font-size: clamp(21px, 2.2vw, 27px);
+  letter-spacing: -0.035em;
+}
+
+.progress-stats span {
+  line-height: 1.5;
+}
+
+.progress-columns {
+  margin-top: 34px;
+  align-items: start;
+  gap: 24px;
+}
+
+.progress-columns .section-title {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.progress-columns .section-title h2 {
+  font-size: 21px;
+  letter-spacing: -0.025em;
+}
+
+.lesson-progress-list {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+.lesson-progress-list button {
+  min-width: 0;
+  padding: 16px;
+  gap: 12px;
+  transition: background 160ms ease;
+}
+
+.lesson-progress-list button:hover {
+  background: var(--cream);
+}
+
+.lesson-progress-list button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -3px;
+}
+
+.lesson-progress-list button > span {
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--green);
+  background: var(--lavender);
+}
+
+.lesson-progress-list button > span.done {
+  background: #e7eee5;
+}
+
+.lesson-progress-list button div {
+  min-width: 0;
+}
+
+.lesson-progress-list strong {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lesson-progress-list small {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.lesson-progress-list em {
+  flex-shrink: 0;
+  color: var(--green);
+  font-size: 10px;
+  text-align: right;
+}
+
+.achievement {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: none;
+  opacity: 0.75;
+}
+
+.achievement.unlocked {
+  border-color: #d6e3d5;
+  background: #fff;
+  opacity: 1;
+}
+
+.achievement > div {
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--lavender);
+}
+
+.achievement.unlocked > div {
+  color: var(--green);
+  background: #e7eee5;
+}
+
+.achievement strong {
+  font-size: 12px;
+}
+
+.achievement small {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.next-step {
+  margin-top: 28px;
+  border: 1px solid #2c6047;
+  border-radius: 14px;
+  padding: 26px;
+  color: white;
+  background: var(--green);
+}
+
+.next-step .eyebrow {
+  color: #e0ece2;
+}
+
+.next-step h2 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.4;
+}
+
+.next-step .btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 750px) {
+  .progress-hero {
+    padding: 22px;
+    gap: 24px;
+  }
+
+  .progress-hero > div:first-child {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .progress-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .progress-columns {
+    margin-top: 28px;
+    gap: 28px;
+  }
+
+  .progress-stats {
+    gap: 10px;
+  }
+
+  .progress-stats > div {
+    padding: 16px;
+  }
+
+  .lesson-progress-list button {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .next-step {
+    padding: 22px;
+    gap: 16px;
+  }
+
+  .next-step .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .progress-stats > div {
+    padding: 12px;
+  }
+
+  .progress-stats strong {
+    font-size: 21px;
+  }
+
+  .lesson-progress-list button > span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lesson-progress-list em {
+    max-width: 78px;
+    font-size: 9px;
+  }
+
+  .achievement {
+    padding: 11px;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill,
+  .lesson-progress-list button {
+    transition: none;
+  }
+}

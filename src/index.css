@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
+
 :root {
-  font-family: 'Plus Jakarta Sans', 'Noto Sans Kannada', sans-serif;
-  color: #35205f;
-  background: #fbf8f1;
+  font-family: 'DM Sans', 'Noto Sans Kannada', sans-serif;
+  color: #27251f;
+  background: #f8f6f0;
   font-synthesis: none;
-  --purple: #6c4ab6;
-  --deep: #35205f;
-  --lavender: #ede5ff;
-  --cream: #fff9f0;
+  text-rendering: optimizeLegibility;
+
+  --purple: #356b52;
+  --deep: #27251f;
+  --lavender: #e7eee5;
+  --cream: #f8f6f0;
   --white: #ffffff;
-  --muted: #756c86;
-  --green: #2f8f65;
-  --coral: #ef775e;
-  --yellow: #f3c65d;
-  --border: #e6def4;
-  --shadow: 0 12px 35px rgba(53, 32, 95, 0.1);
+
+  --muted: #77756d;
+  --green: #356b52;
+  --coral: #b96f50;
+  --yellow: #d5ad58;
+  --border: #e6e2d8;
+
+  --shadow: 0 6px 20px rgba(39, 37, 31, 0.06);
 }
+
+
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

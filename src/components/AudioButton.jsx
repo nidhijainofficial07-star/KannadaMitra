@@ -5,9 +5,9 @@ import { audioFilesByText } from '../data/audioManifest'
 import {
   getKannadaVoiceStatus,
   speakKannada,
+  speakEnglish,
   subscribeToKannadaVoices,
 } from '../utils/speech'
-import './AudioButton.css'
 
 
 const messages = {
@@ -22,6 +22,7 @@ const messages = {
 export default function AudioButton({
   text,
   label = 'Hear pronunciation',
+  language = 'kn',
 }) {
   const [voiceStatus, setVoiceStatus] = useState(
     () => getKannadaVoiceStatus()
@@ -75,7 +76,9 @@ export default function AudioButton({
     setMessage('')
 
     const phrase = text.trim()
-    const audioPath = audioFilesByText[text.trim()]
+    const audioPath = language === 'kn'
+  ? audioFilesByText[text.trim()]
+  : null
 
     if (audioPath) {
       const audio = new Audio(audioPath)
@@ -119,7 +122,9 @@ export default function AudioButton({
       return
     }
 
-    const result = speakKannada(phrase, {
+    const speak = language === 'en' ? speakEnglish : speakKannada
+
+const result = speak(phrase, {
       onStart: () => {
         if (mounted.current && thisRequest === requestId.current) {
           setPlaying(true)

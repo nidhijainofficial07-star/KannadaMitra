@@ -1,6 +1,26 @@
 .library-search { display: flex; padding: 14px; align-items: center; gap: 14px; }.library-search-input { display: flex; flex: 1; min-width: 0; align-items: center; gap: 9px; }.library-search-input > svg { color: var(--purple); }.library-search-input input { width: 100%; border: 0; padding: 8px 0; color: var(--deep); background: transparent; outline: 0; }.library-search-input button { border: 0; padding: 4px; color: var(--muted); background: transparent; }.library-filters { display: flex; gap: 8px; }.library-filters label { color: var(--muted); font-size: 0; }.library-filters select { min-width: 145px; border: 1px solid var(--border); border-radius: 10px; padding: 9px 28px 9px 10px; color: var(--deep); background: #faf8fd; font-size: 11px; font-weight: 600; }
 .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }.library-lesson-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }.library-lesson-wrap { position: relative; }.library-lesson-wrap > .level-badge { position: absolute; z-index: 3; right: 62px; top: 24px; }
-.level-badge { display: inline-flex; border-radius: 99px; padding: 5px 8px; color: #4d357e; background: #eee7fb; font-size: 8px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }.level-badge.intermediate { color: #8a5c00; background: #fff0c6; }.level-badge.advanced { color: #9c4435; background: #ffe4dd; }
+.level-badge {
+  display: inline-flex;
+  border-radius: 99px;
+  padding: 5px 8px;
+  color: #356b52;
+  background: #e7eee5;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.level-badge.intermediate {
+  color: #8a5c00;
+  background: #fff0c6;
+}
+
+.level-badge.advanced {
+  color: #9c4435;
+  background: #ffe4dd;
+}
 .lesson-meta { display: flex; align-items: center; gap: 8px; }.back-link { border: 0; margin: 12px 0 28px; padding: 0; color: var(--purple); background: transparent; font-weight: 700; }.lesson-detail-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid var(--border); }.lesson-detail-head h1 { margin: 16px 0 4px; }.lesson-detail-head .kannada { margin: 0 0 8px; color: var(--purple); font-size: 20px; font-weight: 600; }.lesson-symbol { display: grid; width: 100px; height: 100px; place-items: center; border-radius: 28px; color: var(--purple); background: var(--lavender); }
 .reader-progress { max-width: 760px; margin: 25px auto 13px; }.reader-progress > div:first-child { display: flex; margin-bottom: 7px; justify-content: space-between; color: var(--muted); font-size: 10px; }.reader-progress strong { color: var(--purple); }
 .focus-phrase { max-width: 760px; margin: 0 auto; padding: 30px; }.focus-phrase-top { display: flex; align-items: center; justify-content: space-between; }.focus-phrase-top > div { display: flex; gap: 7px; }.phrase-number { color: #b8a9cf; font-size: 12px; font-weight: 800; }.revision-saved { border-color: var(--green); color: var(--green); background: #e8f6ef; }.focus-phrase-copy { padding: 40px 0 30px; text-align: center; }.focus-phrase-copy p { margin: 0 0 8px; font-size: clamp(28px,5vw,40px); font-weight: 700; line-height: 1.45; }.focus-phrase-copy strong { display: block; color: var(--purple); font-size: 14px; }.focus-phrase-copy span { display: block; margin-top: 7px; color: var(--muted); font-size: 14px; }
@@ -25,29 +45,34 @@
 }
 
 .celebration-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: rgba(25, 20, 45, 0.58);
-  backdrop-filter: blur(6px);
-  overflow: hidden;
-  animation: celebration-fade-in 0.25s ease-out;
+  background: rgba(39, 37, 31, 0.58);
 }
 
 .celebration-card {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 400px);
-  padding: 32px 24px;
+  box-shadow: 0 24px 80px rgba(39, 37, 31, 0.2);
+}
+
+.celebration-card h2 {
+  margin: 8px 0;
+  color: var(--green);
+  font-size: 30px;
+}
+
+.celebration-xp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 20px 0;
+  padding: 18px;
   border: 1px solid var(--border);
-  border-radius: 24px;
-  background: white;
-  text-align: center;
-  box-shadow: 0 24px 80px rgba(30, 20, 60, 0.2);
-  animation: celebration-pop 0.4s ease-out;
+  border-radius: 16px;
+  background: var(--lavender);
+}
+
+.celebration-xp strong {
+  color: var(--green);
+  font-size: 28px;
 }
 
 .celebration-trophy {
@@ -61,11 +86,7 @@
   font-size: 38px;
 }
 
-.celebration-card h2 {
-  margin: 8px 0;
-  color: var(--purple);
-  font-size: 30px;
-}
+
 
 .celebration-card h3 {
   margin: 0 0 10px;
@@ -80,26 +101,11 @@
   line-height: 1.6;
 }
 
-.celebration-xp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin: 20px 0;
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: #f8f5ff;
-}
-
 .celebration-xp > span {
   font-size: 25px;
 }
 
-.celebration-xp strong {
-  color: var(--purple);
-  font-size: 28px;
-}
+
 
 .celebration-xp small {
   color: var(--muted);

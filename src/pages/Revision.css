@@ -1,4 +1,101 @@
-.revision-page { max-width: 850px; }.revision-page .empty-state { margin-top: 55px; }.revision-page .empty-state .btn { margin-top: 22px; }.revision-card { padding: 36px; }.revision-tag { display: flex; align-items: center; gap: 7px; color: var(--purple); font-size: 11px; font-weight: 700; }.revision-card h2 { margin: 24px 0; font-size: 25px; }.revision-options { display: grid; gap: 10px; }.revision-options button { display: flex; border: 1px solid var(--border); border-radius: 13px; padding: 13px; align-items: center; gap: 12px; color: var(--deep); background: white; text-align: left; }.revision-options button > span { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 8px; color: var(--purple); background: var(--lavender); }.revision-options button.correct { border-color: var(--green); color: var(--green); background: #edf9f3; }.revision-options button.wrong { border-color: var(--coral); background: #fff1ee; }.revision-feedback { margin-top: 17px; border-radius: 13px; padding: 14px; color: #9b4d3f; background: #fff1ee; }.revision-feedback.correct { color: var(--green); background: #e8f6ef; }.revision-feedback strong, .revision-feedback span { display: block; }.revision-feedback span { margin-top: 4px; font-size: 11px; }.revision-footer { display: flex; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); align-items: center; justify-content: space-between; gap: 20px; }.revision-footer > span { color: var(--muted); font-size: 10px; }.revision-footer .btn:disabled { cursor: not-allowed; opacity: .45; }
-.saved-revision-list { display: grid; gap: 11px; }.saved-revision-card { display: flex; padding: 20px; align-items: center; justify-content: space-between; gap: 18px; }.saved-revision-card > div:first-child { flex: 1; }.saved-revision-card > div:first-child > span { color: var(--purple); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }.saved-revision-card p { margin: 12px 0 4px; font-size: 20px; font-weight: 700; }.saved-revision-card strong, .saved-revision-card small { display: block; }.saved-revision-card strong { color: var(--purple); font-size: 11px; }.saved-revision-card small { margin-top: 4px; color: var(--muted); }.saved-revision-card > div:last-child { display: flex; align-items: center; gap: 8px; }
+.revision-page { max-width: 850px; }.revision-page .empty-state { margin-top: 55px; }.revision-page .empty-state .btn { margin-top: 22px; }.revision-card { padding: 36px; }.revision-tag {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+.revision-card h2 { margin: 24px 0; font-size: 25px; }.revision-options { display: grid; gap: 10px; }.revision-options button { display: flex; border: 1px solid var(--border); border-radius: 13px; padding: 13px; align-items: center; gap: 12px; color: var(--deep); background: white; text-align: left; }.revision-options button > span {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--green);
+  background: var(--lavender);
+}
+.revision-options button.correct { border-color: var(--green); color: var(--green); background: #edf9f3; }.revision-options button.wrong { border-color: var(--coral); background: #fff1ee; }.revision-feedback { margin-top: 17px; border-radius: 13px; padding: 14px; color: #9b4d3f; background: #fff1ee; }.revision-feedback.correct { color: var(--green); background: #e8f6ef; }.revision-feedback strong, .revision-feedback span { display: block; }.revision-feedback span { margin-top: 4px; font-size: 11px; }.revision-footer { display: flex; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); align-items: center; justify-content: space-between; gap: 20px; }.revision-footer > span { color: var(--muted); font-size: 10px; }.revision-footer .btn:disabled { cursor: not-allowed; opacity: .45; }
+.saved-revision-list { display: grid; gap: 11px; }.saved-revision-card { display: flex; padding: 20px; align-items: center; justify-content: space-between; gap: 18px; }.saved-revision-card > div:first-child { flex: 1; }.saved-revision-card > div:first-child > span {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.saved-revision-card p { margin: 12px 0 4px; font-size: 20px; font-weight: 700; }.saved-revision-card strong, .saved-revision-card small { display: block; }.saved-revision-card strong {
+  color: var(--green);
+  font-size: 11px;
+}
+.saved-revision-card small { margin-top: 4px; color: var(--muted); }.saved-revision-card > div:last-child { display: flex; align-items: center; gap: 8px; }
 @media (max-width: 600px) { .revision-card { padding: 24px 16px; }.revision-footer { align-items: stretch; flex-direction: column; } }
 @media (max-width: 600px) { .saved-revision-card { align-items: stretch; flex-direction: column; }.saved-revision-card > div:last-child { justify-content: space-between; } }
+/* Revision practice — visual refinement */
+.revision-card,
+.saved-revision-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: none;
+}
+
+.revision-options button {
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.revision-options button:not(.correct):not(.wrong):hover {
+  border-color: #d5dfd3;
+  background: var(--cream);
+}
+
+.revision-options button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.revision-options button.correct {
+  border-color: var(--green);
+  background: #e8f6ef;
+}
+
+.revision-options button.wrong {
+  border-color: var(--coral);
+  background: #fff1ee;
+}
+
+.revision-feedback {
+  line-height: 1.6;
+}
+
+.saved-revision-card {
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.saved-revision-card:hover {
+  border-color: #d5dfd3;
+  box-shadow: 0 8px 20px rgba(39, 37, 31, 0.05);
+}
+
+.saved-revision-card p {
+  color: var(--deep);
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .revision-card h2 {
+    font-size: 22px;
+  }
+
+  .saved-revision-card {
+    padding: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-options button,
+  .saved-revision-card {
+    transition: none;
+  }
+}

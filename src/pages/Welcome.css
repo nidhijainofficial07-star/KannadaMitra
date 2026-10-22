@@ -1,31 +1,414 @@
-.welcome { min-height: 100vh; overflow: hidden; background: radial-gradient(circle at 80% 25%, #e9defc 0, transparent 28%), var(--cream); }
-.welcome-nav { display: flex; max-width: 1180px; margin: 0 auto; padding: 26px 28px; align-items: center; justify-content: space-between; }
-.welcome-pill { border: 1px solid var(--border); border-radius: 99px; padding: 8px 13px; color: var(--purple); background: rgba(255,255,255,.65); font-size: 12px; font-weight: 700; }
-.welcome-hero { display: grid; max-width: 1180px; min-height: calc(100vh - 100px); margin: 0 auto; padding: 70px 28px 100px; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 70px; }
-.welcome-copy h1 { max-width: 660px; font-size: clamp(42px, 6vw, 72px); }
-.welcome-copy h1 em { color: var(--purple); font-family: Georgia, serif; font-weight: 500; }
-.welcome-lead { max-width: 590px; margin: 24px 0 30px; color: var(--muted); font-size: 18px; line-height: 1.75; }
-.welcome-cta { min-height: 52px; padding: 12px 23px; }
-.welcome-proof { display: flex; flex-wrap: wrap; gap: 19px; margin-top: 30px; color: var(--muted); font-size: 12px; font-weight: 600; }
-.welcome-proof span { display: flex; align-items: center; gap: 5px; }
-.welcome-proof svg { color: var(--green); }
-.welcome-visual { position: relative; min-height: 490px; display: grid; place-items: center; }
-.speech-card { position: relative; z-index: 2; width: min(100%, 380px); padding: 64px 35px 32px; transform: rotate(-1.5deg); box-shadow: var(--shadow); }
-.speech-avatar { position: absolute; top: -28px; left: 34px; display: grid; width: 65px; height: 65px; place-items: center; border: 6px solid var(--cream); border-radius: 22px; color: white; background: var(--purple); font-size: 28px; font-weight: 700; }
-.welcome-kannada { margin: 28px 0 3px; color: var(--deep); font-size: 45px; font-weight: 700; }
-.transliteration { color: var(--purple); font-weight: 700; }
-.meaning-row { display: flex; border-top: 1px solid var(--border); margin-top: 24px; padding-top: 19px; align-items: center; justify-content: space-between; color: var(--muted); }
-.sound-wave { color: var(--purple); font-weight: 800; letter-spacing: -3px; }
-.mini-card { position: absolute; z-index: 3; display: flex; min-width: 150px; padding: 12px 15px; align-items: center; gap: 10px; }
-.mini-card svg { color: var(--coral); }
-.mini-card strong, .mini-card small { display: block; }
-.mini-card strong { font-size: 13px; }.mini-card small { margin-top: 2px; color: var(--muted); font-size: 10px; }
-.mini-streak { left: 0; bottom: 66px; transform: rotate(3deg); }.mini-xp { right: -12px; top: 72px; transform: rotate(4deg); }.mini-xp svg { color: #dca624; }
-.decor-dot { position: absolute; border-radius: 50%; background: var(--coral); }.dot-one { top: 45px; left: 55px; width: 12px; height: 12px; }.dot-two { right: 40px; bottom: 75px; width: 18px; height: 18px; background: var(--yellow); }
-@media (max-width: 850px) {
-  .welcome-hero { grid-template-columns: 1fr; padding-top: 35px; gap: 20px; text-align: center; }
-  .welcome-copy h1, .welcome-lead { margin-left: auto; margin-right: auto; }
-  .welcome-proof { justify-content: center; }
-  .welcome-visual { min-height: 420px; }
+
+.welcome {
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--deep);
+  background:
+    radial-gradient(ellipse at 82% 30%, rgba(224, 215, 241, 0.42), transparent 35%),
+    var(--cream);
 }
-@media (max-width: 520px) { .welcome-nav { padding: 18px 16px; }.welcome-pill { display: none; }.welcome-hero { padding: 30px 20px 80px; }.welcome-copy h1 { font-size: 42px; }.welcome-lead { font-size: 15px; }.welcome-proof { gap: 9px 15px; }.mini-streak { left: -5px; }.mini-xp { right: -5px; } }
+
+.welcome-nav {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 36px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.welcome-pill {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.welcome-hero {
+  display: grid;
+  max-width: 1200px;
+  min-height: calc(100vh - 88px);
+  margin: 0 auto;
+  padding: 54px 36px 80px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.welcome-copy {
+  max-width: 620px;
+}
+
+.welcome-copy .eyebrow {
+  margin-bottom: 20px;
+}
+
+.welcome-copy h1 {
+  max-width: 600px;
+  margin: 0;
+  font-size: clamp(44px, 5.1vw, 68px);
+  line-height: 1.09;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+}
+
+.welcome-copy h1 em {
+  color: var(--purple);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.welcome-lead {
+  max-width: 490px;
+  margin: 24px 0 28px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.welcome-cta {
+  min-height: 50px;
+  padding: 13px 22px;
+  border-radius: 9px;
+  box-shadow: none;
+}
+
+.welcome-cta:hover {
+  box-shadow: 0 5px 14px rgba(94, 71, 155, 0.15);
+}
+
+.welcome-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.welcome-proof span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.welcome-proof svg {
+  width: 15px;
+  height: 15px;
+  color: var(--green);
+}
+
+.welcome-visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 450px;
+  padding: 36px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.welcome-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(94, 71, 155, 0.10);
+  border-radius: 50%;
+  background: rgba(240, 236, 247, 0.55);
+  content: '';
+}
+
+.speech-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 370px);
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 12px 36px rgba(41, 38, 51, 0.07);
+  transform: none;
+}
+
+.speech-avatar {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 26px;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: var(--purple);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.speech-card .chip {
+  border-radius: 5px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.welcome-kannada {
+  margin: 26px 0 8px;
+  color: var(--deep);
+  font-size: clamp(34px, 3.2vw, 44px);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.transliteration {
+  margin-bottom: 0;
+  color: var(--purple);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.meaning-row {
+  display: flex;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sound-wave {
+  color: var(--purple);
+  font-size: 20px;
+  letter-spacing: -3px;
+}
+
+.mini-card {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  min-width: 145px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  box-shadow: 0 5px 18px rgba(41, 38, 51, 0.06);
+}
+
+.mini-card svg {
+  width: 19px;
+  height: 19px;
+  color: var(--purple);
+}
+
+.mini-card strong,
+.mini-card small {
+  display: block;
+}
+
+.mini-card strong {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mini-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.mini-streak {
+  bottom: 24px;
+  left: 0;
+}
+
+.mini-xp {
+  top: 24px;
+  right: 0;
+}
+
+.mini-xp svg {
+  color: var(--yellow);
+}
+
+.decor-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.dot-one {
+  top: 52px;
+  left: 16px;
+}
+
+.dot-two {
+  right: 25px;
+  bottom: 54px;
+  width: 12px;
+  height: 12px;
+  background: var(--yellow);
+}
+
+@media (min-width: 1400px) {
+  .welcome-hero {
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
+}
+
+@media (max-width: 850px) {
+  .welcome-hero {
+    min-height: auto;
+    padding-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .welcome-copy {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .welcome-copy h1,
+  .welcome-lead {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .welcome-proof {
+    justify-content: center;
+  }
+
+  .welcome-visual {
+    width: min(100%, 550px);
+    min-height: 430px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .welcome-nav {
+    padding: 18px 20px;
+  }
+
+  .welcome-pill {
+    display: none;
+  }
+
+  .welcome-hero {
+    padding: 34px 20px 48px;
+    gap: 18px;
+  }
+
+  .welcome-copy .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .welcome-copy h1 {
+    font-size: clamp(37px, 10vw, 46px);
+    line-height: 1.13;
+  }
+
+  .welcome-lead {
+    margin: 18px 0 23px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .welcome-cta {
+    width: 100%;
+  }
+
+  .welcome-proof {
+    gap: 11px 14px;
+    font-size: 11px;
+  }
+
+  .welcome-visual {
+    min-height: 370px;
+    padding: 24px 10px;
+  }
+
+  .speech-card {
+    width: min(100%, 340px);
+    padding: 25px;
+  }
+
+  .speech-avatar {
+    margin-bottom: 20px;
+  }
+
+  .welcome-kannada {
+    margin-top: 22px;
+    font-size: 34px;
+  }
+
+  .meaning-row {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .mini-card {
+    min-width: 125px;
+    padding: 10px;
+    gap: 7px;
+  }
+
+  .mini-streak {
+    bottom: 2px;
+    left: 0;
+  }
+
+  .mini-xp {
+    top: 2px;
+    right: 0;
+  }
+
+  .dot-one {
+    top: 30px;
+    left: 2px;
+  }
+
+  .dot-two {
+    right: 5px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome-nav {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .welcome-hero {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .welcome-proof {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-card {
+    min-width: 115px;
+  }
+
+  .mini-card small {
+    font-size: 9px;
+  }
+}
