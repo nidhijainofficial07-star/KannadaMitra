@@ -1,113 +1,210 @@
-# KannadaMitra — Your Friendly Guide to Kannada
+# KannadaMitra 🇮🇳
 
-**KannadaMitra** is a beginner-friendly web application that helps people learn and practise Kannada for everyday situations through interactive lessons, real-life conversations, quizzes, and audio pronunciation.
+### Learn Kannada. Practice real conversations. Build confidence.
 
-🔗 **Live Demo:** https://kannada-mitra.vercel.app  
-💻 **GitHub Repository:** https://github.com/nidhijainofficial07-star/KannadaMitra
+**KannadaMitra** is a beginner-friendly web application designed to help people learn practical Kannada through interactive lessons, everyday phrases, conversation practice, quizzes, and progress tracking.
 
-## Problem Statement
+Built for the **Kannada Digital Innovation Hackathon 2026** under the selected problem statement **“Kannada for Everyone.”**
 
-**Kannada for Everyone — Kannada Digital Innovation Hackathon 2026**
+---
 
-People who are new to Kannada may find it difficult to communicate in everyday situations such as travelling, shopping, attending college, or asking for help. KannadaMitra provides a simple, interactive way to learn useful Kannada phrases and practise using them in context.
+## 🔗 Project Links
 
-## Features
+- **Live Demo:** https://kannada-mitra.vercel.app 
+- **GitHub Repository:** https://github.com/nidhijainofficial07-star/KannadaMitra
+- **Presentation:** https://drive.google.com/file/d/1TGy5sn0c9vq6R51J31gZxtA5gRz6gl7m/view?usp=sharing
+- **Demo Video:** https://drive.google.com/file/d/1ACAPzN2fheglNG6F8lsTHxXqiRNLKanI/view?usp=sharing
 
-- **Interactive Lessons:** Learn useful Kannada phrases with Kannada script, English transliteration, and meanings.
-- **Conversation Practice:** Practise real-life scenarios across eight categories: food, transport, shopping, college, everyday conversations, emergencies, home, and health.
-- **Survival Quiz:** Test your understanding with a 25-question quiz.
-- **Audio Pronunciation:** Listen to Kannada phrases using audio recordings, with browser speech synthesis as a fallback.
-- **Progress & XP:** Track learning progress and earn experience points.
-- **Responsive Design:** Use the application on desktop and mobile devices.
-- **Local Progress Storage:** Save progress in the browser using localStorage.
+## 🎯 Problem Statement
 
-## Tech Stack
+**Kannada for Everyone**
 
-| Technology | Purpose |
-|---|---|
-| React | Component-based user interface |
-| JavaScript | Application logic and interactions |
-| Vite | Development server and production build |
-| CSS | Styling and responsive design |
-| JSON / JavaScript data | Lesson and conversation content |
-| HTML5 Audio | Kannada pronunciation playback |
-| Web Speech API | Speech synthesis fallback |
-| localStorage | Saving learning progress locally |
-| GitHub | Source code and version control |
-| Vercel | Deployment and hosting |
+Learning a new language involves more than memorizing vocabulary. Beginners also need to understand how words are written, connect written phrases with pronunciation, and practice using the language in everyday situations.
 
-## Getting Started
+Traditional learning materials may not always provide an engaging, interactive way to rehearse practical conversations.
+
+KannadaMitra aims to bridge this gap by bringing useful Kannada phrases, guided learning activities, conversation scenarios, quizzes, and progress tracking together in one accessible web application.
+
+## 💡 Our Solution
+
+KannadaMitra provides a practical learning experience that encourages users to learn useful expressions, practice them in context, check their understanding, and continue improving.
+
+The application is designed around three goals:
+
+- **Learn:** Understand useful Kannada phrases and their transliterations.
+- **Practice:** Apply what you learn through conversation scenarios and quizzes.
+- **Progress:** Review learning activities and track progress through the app's progress and XP features.
+
+## ✨ Features
+
+### 📚 Interactive Kannada Lessons
+
+Learn Kannada through structured lessons and useful phrases.
+
+### 🔤 Kannada Script and Transliteration
+
+View Kannada text alongside Latin-script transliteration to help beginners connect written Kannada with familiar letters.
+
+### 🔊 Audio Support
+
+Listen to supported phrases using the application's speech functionality. Audio availability and pronunciation depend on browser and device support.
+
+### 💬 Everyday Conversation Practice
+
+Practice responding in practical situations through guided conversation scenarios.
+
+### 🧠 Quizzes and Revision
+
+Test your understanding with interactive quizzes and revisit learning material to reinforce what you have learned.
+
+### 🏆 Progress and XP
+
+Follow your learning progress and earn XP through supported learning activities.
+
+### ❤️ Saved Phrases and Additional Learning Tools
+
+Use available saved-phrase, challenge, and revision features to revisit useful content and continue practicing.
+
+### 📱 Responsive Interface
+
+Use the application on desktop and mobile-sized screens.
+
+*Feature descriptions should match the version deployed for the hackathon.*
+
+## 🛠️ Tech Stack
+
+| Technology          | Purpose                                         |
+| ------------------- | ----------------------------------------------- |
+| React               | Component-based user interface                  |
+| Vite                | Development server and production build tooling |
+| JavaScript / JSX    | Application logic and UI composition            |
+| CSS                 | Styling and responsive layouts                  |
+| Browser Speech APIs | Supported speech and audio functionality        |
+
+The application uses a frontend-focused architecture. Refer to the source code and package configuration for the exact dependencies and browser APIs used by the current version.
+
+## 🏗️ Architecture
+
+```text
+                   ┌──────────────────────┐
+                   │        Learner       │
+                   └──────────┬───────────┘
+                              │
+                              ▼
+                   ┌──────────────────────┐
+                   │   Responsive Web UI   │
+                   │       React           │
+                   └──────────┬───────────┘
+                              │
+                              ▼
+                   ┌──────────────────────┐
+                   │ Learning Components  │
+                   ├──────────────────────┤
+                   │ Lessons              │
+                   │ Conversation Practice│
+                   │ Quizzes              │
+                   │ Progress and XP      │
+                   │ Revision and Saved   │
+                   │ Phrases               │
+                   └──────────┬───────────┘
+                              │
+                  ┌───────────┴───────────┐
+                  ▼                       ▼
+       ┌──────────────────┐   ┌────────────────────┐
+       │ Learning Data    │   │ Browser Speech     │
+       │ and App State    │   │ Functionality      │
+       └──────────────────┘   └────────────────────┘
+```
+
+This diagram illustrates the frontend learning flow. It is conceptual: verify the actual data persistence and component connections in the source code before treating it as a complete implementation diagram.
+
+## 🚀 Getting Started
+
+Follow these instructions to run KannadaMitra locally.
 
 ### Prerequisites
 
-Install the following before running the project:
+Install the following:
 
-- [Node.js](https://nodejs.org/) (LTS version recommended)
-- npm, included with Node.js
-- [Git](https://git-scm.com/) (optional, for cloning the repository)
+- [Node.js](https://nodejs.org/) — use a version compatible with the project's dependencies.
+- npm — included with Node.js.
+- [Git](https://git-scm.com/)
 
-### Installation
-
-**1. Clone the repository**
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/nidhijainofficial07-star/KannadaMitra.git
-```
-
-**2. Navigate to the project folder**
-
-```bash
 cd KannadaMitra
 ```
 
-**3. Install dependencies**
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-**4. Start the development server**
+### 3. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL displayed in your terminal, usually `http://localhost:5173`.
+Open the local URL displayed in your terminal.
 
-### Production Build
-
-To create an optimized production build:
+### 4. Create a production build
 
 ```bash
 npm run build
 ```
 
-To preview the production build locally:
+### 5. Preview the production build
 
 ```bash
 npm run preview
 ```
 
-## How It Works
+Use the preview URL displayed in your terminal to test the production build locally.
 
-1. Choose a lesson and learn useful Kannada phrases.
-2. Listen to pronunciation and understand the meaning.
-3. Practise using phrases in interactive, real-life conversations.
-4. Test your knowledge with the survival quiz.
-5. Track your progress and XP as you continue learning.
 
-## Future Scope
+## 🌐 Deployment
 
-- Add more everyday conversation scenarios and vocabulary.
-- Introduce spaced-revision reminders.
-- Support user profiles and synchronised progress across devices.
-- Expand pronunciation content and test audio compatibility across devices.
+KannadaMitra can be deployed using a static hosting platform that supports Vite-built frontend applications, such as Vercel or Netlify.
 
-## Project Information
+Typical build settings:
 
-- **Project Name:** KannadaMitra
-- **Hackathon:** Kannada Digital Innovation Hackathon 2026
-- **Problem Statement:** Kannada in Everyday life
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+
+After deployment, open the public URL and test the core learning features. Confirm that any assets, audio functionality, and client-side routes work in the hosted environment.
+
+**Live URL:** https://kannada-mitra.vercel.app
+
+## 🔐 Security
+
+- Do not commit API keys, passwords, access tokens, or other secrets.
+- If environment variables are needed in a future version, document the required variable names in a `.env.example` file without including real credentials.
+- Review the repository contents before making it public.
+
+## 🌱 Future Scope
+
+Possible future improvements include:
+
+- More everyday Kannada conversation scenarios.
+- Expanded lessons and vocabulary for different proficiency levels.
+- Additional accessibility and pronunciation-learning support.
+- More revision activities and learning recommendations.
+- Further improvements based on feedback from learners and educators.
+
+These are potential enhancements, not claims about existing functionality.
+
+## 🎯 Hackathon Submission
+
+- **Event:** Kannada Digital Innovation Hackathon 2026
+- **Selected Problem Statement:** Kannada for Everyone
+- **Project:** KannadaMitra
+- **Purpose:** Make practical Kannada learning more interactive, approachable, and useful for everyday communication.
+
+*KannadaMitra — Making everyday Kannada easier to learn and practice.*
 - **Deployment:** Vercel
 
 ---
